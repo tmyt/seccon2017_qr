@@ -1,0 +1,49 @@
+﻿<Window x:Class="qr.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:qr"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid x:Name="root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBox x:Name="key" KeyDown="Key_OnKeyDown"/>
+        <ListBox x:Name="xxx" Grid.Row="1" HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="32"/>
+                        </Grid.ColumnDefinitions>
+                        <ItemsControl ItemsSource="{Binding}" Width="246" Height="246">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Canvas />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                        <StackPanel Grid.Column="1">
+                            <Button Tag="0" Content="Rotate" Click="RotateClick" MouseEnter="RotateMouseEnter" MouseLeave="RotateMouseLeave" Loaded="FrameworkElement_OnLoaded"/>
+                            <Button Tag="1" Content="Rotate" Click="RotateClick" MouseEnter="RotateMouseEnter" MouseLeave="RotateMouseLeave" Loaded="FrameworkElement_OnLoaded"/>
+                            <Button Tag="2" Content="Rotate" Click="RotateClick" MouseEnter="RotateMouseEnter" MouseLeave="RotateMouseLeave" Loaded="FrameworkElement_OnLoaded"/>
+                            <Button Tag="3" Content="Rotate" Click="RotateClick" MouseEnter="RotateMouseEnter" MouseLeave="RotateMouseLeave" Loaded="FrameworkElement_OnLoaded"/>
+                            <Button Tag="4" Content="Rotate" Click="RotateClick" MouseEnter="RotateMouseEnter" MouseLeave="RotateMouseLeave" Loaded="FrameworkElement_OnLoaded"/>
+                            <Button Tag="5" Content="Rotate" Click="RotateClick" MouseEnter="RotateMouseEnter" MouseLeave="RotateMouseLeave" Loaded="FrameworkElement_OnLoaded"/>
+                            <Button Tag="6" Content="Rotate" Click="RotateClick" MouseEnter="RotateMouseEnter" MouseLeave="RotateMouseLeave" Loaded="FrameworkElement_OnLoaded"/>
+                            <Button Tag="7" Content="Rotate" Click="RotateClick" MouseEnter="RotateMouseEnter" MouseLeave="RotateMouseLeave" Loaded="FrameworkElement_OnLoaded"/>
+                            <Button Tag="8" Content="Rotate" Click="RotateClick" MouseEnter="RotateMouseEnter" MouseLeave="RotateMouseLeave" Loaded="FrameworkElement_OnLoaded"/>
+                        </StackPanel>
+                        <Ellipse Fill="Aquamarine" Width="32" Height="32" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2" Visibility="Hidden"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+    </Grid>
+</Window>
